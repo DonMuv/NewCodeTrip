@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+void brup(int);
+
+int main()
+{
+		int n =20;
+		brup(n) ;
+	return 0;
+}
+
+
+void brup(int n)
+{
+	int i, j, count =0;
+	int sign =0;
+
+	for (i =1; i<n; i++)
+	{
+		for(j =i+1; j <n; j++)
+		{
+			count = (i+j)*(j-i+1)/2;    //数学公式，d为1的等差数列求和
+			if (count == n)
+			{
+				sign =1;
+				int result;
+				for(result =i; result <=j; result++)
+				{
+					cout << result ;
+
+					if(result !=j)
+						cout << "+";
+				}
+
+				cout << endl;
+				
+
+			}
+		}
+	}
+	if(sign == 0) cout << "none" << endl;
+}
